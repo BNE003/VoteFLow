@@ -30,11 +30,9 @@ dependencies: [
 
 ## Quick Start
 
-### 1. Supabase Setup
 
-Create a Supabase project and set up the FeatureFlow database schema (see [FeatureFlow Setup](https://github.com/BNE003/FeatureFlowGit)).
 
-### 2. Integration
+### 1. Integration
 
 ```swift
 import SwiftUI
@@ -56,7 +54,7 @@ This provides a complete feature voting interface including:
 - Detail view with comments
 - Form for submitting new features
 
-### 3. Custom Integration
+### 2. Custom Integration
 
 For more control, you can use individual views separately:
 
@@ -103,10 +101,6 @@ VoteFlow automatically uses a device-specific identifier to track votes. Users c
 ## Dependencies
 
 - [FeatureFlow](https://github.com/BNE003/FeatureFlowGit) - Core SDK for feature management
-
-## License
-
-MIT License
 
 ## Support
 
