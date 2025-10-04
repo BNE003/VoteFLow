@@ -13,13 +13,11 @@ let package = Package(
             targets: ["VoteFlow"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/BNE003/FeatureFlowGit", branch: "main")
     ],
     targets: [
         .target(
             name: "VoteFlow",
             dependencies: [
-                .product(name: "FeatureFlow", package: "FeatureFlowGit")
             ],
             resources: [.process("requirements.md")]),
         .testTarget(
