@@ -1,0 +1,10 @@
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/FeatureFlow.swift
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/FeatureFlowView.swift
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/Models/Comment.swift
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/Models/Feature.swift
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/Models/Vote.swift
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/Networking/SupabaseClient.swift
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/Views/FeatureDetailView.swift
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/Views/FeatureListView.swift
+/Users/benediktheld/Documents/dev/VoteFLow/Sources/VoteFlow/Views/SubmitFeatureView.swift
+/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlow.build/DerivedSources/resource_bundle_accessor.swift

@@ -1,0 +1,4 @@
+module VoteFlow {
+    header "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlow.build/VoteFlow-Swift.h"
+    requires objc
+}

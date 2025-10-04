@@ -1,0 +1,4 @@
+module FeatureFlow {
+    header "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/FeatureFlow.build/FeatureFlow-Swift.h"
+    requires objc
+}

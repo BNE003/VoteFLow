@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlowPackageTests.build/master.swiftdeps"
+  },
+  "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlowPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlowPackageTests.build/runner.d",
+    "object": "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlowPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlowPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlowPackageTests.build/runner.swiftdeps"
+  }
+}

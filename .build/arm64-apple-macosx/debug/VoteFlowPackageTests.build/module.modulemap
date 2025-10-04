@@ -1,0 +1,4 @@
+module VoteFlowPackageTests {
+    header "/Users/benediktheld/Documents/dev/VoteFLow/.build/arm64-apple-macosx/debug/VoteFlowPackageTests.build/VoteFlowPackageTests-Swift.h"
+    requires objc
+}

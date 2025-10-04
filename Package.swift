@@ -2,24 +2,28 @@
 import PackageDescription
 
 let package = Package(
-    name: "FeatureFlow",
+    name: "VoteFlow",
     platforms: [
         .iOS(.v16),
         .macOS(.v13)
     ],
     products: [
         .library(
-            name: "FeatureFlow",
-            targets: ["FeatureFlow"]),
+            name: "VoteFlow",
+            targets: ["VoteFlow"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/BNE003/FeatureFlowGit", branch: "main")
+    ],
     targets: [
         .target(
-            name: "FeatureFlow",
-            dependencies: [],
+            name: "VoteFlow",
+            dependencies: [
+                .product(name: "FeatureFlow", package: "FeatureFlowGit")
+            ],
             resources: [.process("requirements.md")]),
         .testTarget(
-            name: "FeatureFlowTests",
-            dependencies: ["FeatureFlow"]),
+            name: "VoteFlowTests",
+            dependencies: ["VoteFlow"]),
     ]
 )
