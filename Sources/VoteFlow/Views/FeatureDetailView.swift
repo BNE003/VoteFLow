@@ -5,6 +5,8 @@ struct FeatureDetailView: View {
     let feature: Feature
     let appId: String
 
+    @Environment(\.colorScheme) var colorScheme
+
     @State private var newCommentAuthor = ""
     @State private var newCommentText = ""
     @State private var isAddingComment = false
@@ -15,17 +17,8 @@ struct FeatureDetailView: View {
     }
 
     var body: some View {
-        ZStack {
-            #if os(iOS)
-            Color(UIColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.0))
-                .ignoresSafeArea()
-            #else
-            Color(NSColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.0))
-                .ignoresSafeArea()
-            #endif
-
-            ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
                 // Header Card
                 VStack(alignment: .leading, spacing: 16) {
                     HStack(alignment: .top, spacing: 16) {
@@ -78,11 +71,11 @@ struct FeatureDetailView: View {
                     }
                 }
                 .padding(20)
-                #if os(iOS)
-                .background(Color(UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
-                #else
-                .background(Color(NSColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
-                #endif
+                .background(
+                    colorScheme == .dark
+                        ? Color(red: 0.18, green: 0.18, blue: 0.20)
+                        : Color(UIColor.systemBackground)
+                )
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)
                 .padding(.horizontal)
@@ -100,11 +93,11 @@ struct FeatureDetailView: View {
                         .lineSpacing(4)
                 }
                 .padding(20)
-                #if os(iOS)
-                .background(Color(UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
-                #else
-                .background(Color(NSColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
-                #endif
+                .background(
+                    colorScheme == .dark
+                        ? Color(red: 0.18, green: 0.18, blue: 0.20)
+                        : Color(UIColor.systemBackground)
+                )
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)
                 .padding(.horizontal)
@@ -226,11 +219,11 @@ struct FeatureDetailView: View {
                             }
                         }
                         .padding(20)
-                        #if os(iOS)
-                        .background(Color(UIColor(red: 0.20, green: 0.20, blue: 0.22, alpha: 1.0)))
-                        #else
-                        .background(Color(NSColor(red: 0.20, green: 0.20, blue: 0.22, alpha: 1.0)))
-                        #endif
+                        .background(
+                            colorScheme == .dark
+                                ? Color(red: 0.20, green: 0.20, blue: 0.22)
+                                : Color(UIColor.systemBackground)
+                        )
                         .cornerRadius(16)
                         .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)
                         .padding(.horizontal)
@@ -268,7 +261,6 @@ struct FeatureDetailView: View {
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
-        }
     }
 
     private var isCommentFormValid: Bool {
@@ -308,6 +300,7 @@ struct FeatureDetailView: View {
 
 struct CommentView: View {
     let comment: Comment
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -329,11 +322,11 @@ struct CommentView: View {
                 .lineSpacing(3)
         }
         .padding(16)
-        #if os(iOS)
-        .background(Color(UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
-        #else
-        .background(Color(NSColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
-        #endif
+        .background(
+            colorScheme == .dark
+                ? Color(red: 0.18, green: 0.18, blue: 0.20)
+                : Color(UIColor.systemBackground)
+        )
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 1)
     }

@@ -89,6 +89,7 @@ struct FeatureListView: View {
 struct FeatureRowView: View {
     let feature: Feature
     @ObservedObject var client: SupabaseClient
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
@@ -149,11 +150,11 @@ struct FeatureRowView: View {
             .opacity(client.hasVotedForFeature(feature.id) ? 0.6 : 1.0)
         }
         .padding(20)
-        #if os(iOS)
-        .background(Color(UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
-        #else
-        .background(Color(NSColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
-        #endif
+        .background(
+            colorScheme == .dark
+                ? Color(red: 0.18, green: 0.18, blue: 0.20)
+                : Color(UIColor.systemBackground)
+        )
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)
     }

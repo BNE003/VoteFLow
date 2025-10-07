@@ -13,14 +13,6 @@ public struct FeatureFlowView: View {
     public var body: some View {
         NavigationView {
             ZStack {
-                #if os(iOS)
-                Color(UIColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.0))
-                    .ignoresSafeArea()
-                #else
-                Color(NSColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.0))
-                    .ignoresSafeArea()
-                #endif
-
                 FeatureListView(client: client, appId: appId)
                     .navigationTitle("Features & Feedback")
                     #if os(iOS)
