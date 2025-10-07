@@ -5,6 +5,7 @@ public struct FeatureFlowView: View {
 
     @StateObject private var client = SupabaseClient()
     @State private var showSubmitSheet = false
+    @Environment(\.colorScheme) private var colorScheme
 
     public init(appId: String) {
         self.appId = appId
@@ -13,6 +14,9 @@ public struct FeatureFlowView: View {
     public var body: some View {
         NavigationView {
             ZStack {
+                backgroundColor
+                    .ignoresSafeArea()
+
                 FeatureListView(client: client, appId: appId)
                     .navigationTitle("Features & Feedback")
                     #if os(iOS)
@@ -54,6 +58,12 @@ public struct FeatureFlowView: View {
         #if os(iOS)
         .navigationViewStyle(.stack)
         #endif
+    }
+
+    private var backgroundColor: Color {
+        colorScheme == .dark
+            ? Color(red: 0.16, green: 0.16, blue: 0.18)
+            : Color(UIColor.systemBackground)
     }
 }
 
