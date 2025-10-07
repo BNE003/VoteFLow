@@ -150,9 +150,9 @@ struct FeatureRowView: View {
         }
         .padding(20)
         #if os(iOS)
-        .background(Color(.systemBackground))
+        .background(Color(UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
         #else
-        .background(Color(NSColor.windowBackgroundColor))
+        .background(Color(NSColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
         #endif
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)

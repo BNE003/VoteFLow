@@ -15,8 +15,17 @@ struct FeatureDetailView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+        ZStack {
+            #if os(iOS)
+            Color(UIColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.0))
+                .ignoresSafeArea()
+            #else
+            Color(NSColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.0))
+                .ignoresSafeArea()
+            #endif
+
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
                 // Header Card
                 VStack(alignment: .leading, spacing: 16) {
                     HStack(alignment: .top, spacing: 16) {
@@ -70,9 +79,9 @@ struct FeatureDetailView: View {
                 }
                 .padding(20)
                 #if os(iOS)
-                .background(Color(.systemBackground))
+                .background(Color(UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
                 #else
-                .background(Color(NSColor.windowBackgroundColor))
+                .background(Color(NSColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
                 #endif
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)
@@ -92,9 +101,9 @@ struct FeatureDetailView: View {
                 }
                 .padding(20)
                 #if os(iOS)
-                .background(Color(.systemBackground))
+                .background(Color(UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
                 #else
-                .background(Color(NSColor.windowBackgroundColor))
+                .background(Color(NSColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
                 #endif
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)
@@ -218,9 +227,9 @@ struct FeatureDetailView: View {
                         }
                         .padding(20)
                         #if os(iOS)
-                        .background(Color(.systemBackground))
+                        .background(Color(UIColor(red: 0.20, green: 0.20, blue: 0.22, alpha: 1.0)))
                         #else
-                        .background(Color(NSColor.windowBackgroundColor))
+                        .background(Color(NSColor(red: 0.20, green: 0.20, blue: 0.22, alpha: 1.0)))
                         #endif
                         .cornerRadius(16)
                         .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)
@@ -259,6 +268,7 @@ struct FeatureDetailView: View {
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
+        }
     }
 
     private var isCommentFormValid: Bool {
@@ -320,9 +330,9 @@ struct CommentView: View {
         }
         .padding(16)
         #if os(iOS)
-        .background(Color(.systemBackground))
+        .background(Color(UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
         #else
-        .background(Color(NSColor.windowBackgroundColor))
+        .background(Color(NSColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1.0)))
         #endif
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 1)
