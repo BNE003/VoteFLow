@@ -102,8 +102,19 @@ struct FeatureRowView: View {
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
 
-                // Status Badge
-                StatusBadge(status: feature.status)
+                // Status Badge and Comment Count
+                HStack(spacing: 8) {
+                    StatusBadge(status: feature.status)
+
+                    // Comment Count
+                    HStack(spacing: 4) {
+                        Image(systemName: "bubble.left")
+                            .font(.system(size: 11))
+                        Text("\(feature.comments?.count ?? 0)")
+                            .font(.system(size: 12, weight: .medium))
+                    }
+                    .foregroundColor(.secondary)
+                }
 
                 // Description (optional, can be hidden for cleaner look)
                 if !feature.description.isEmpty {
